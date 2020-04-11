@@ -8,6 +8,13 @@ var app = require('../app');
 var debug = require('debug')('lab6-websockets:server');
 var http = require('http');
 
+var primus = new Primus(server, { transformer: 'browserchannel' });
+var Socket = primus.Socket
+  , socket = new Socket('url');
+
+var server = http.createServer(app);
+require('../primus/live').go(server);
+
 /**
  * Get port from environment and store in Express.
  */
