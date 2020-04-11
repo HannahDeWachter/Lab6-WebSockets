@@ -17,7 +17,8 @@
     "kind-of": "^6.0.3",
     "morgan": "~1.9.1",
     "primus": "^7.3.4",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "ws": "^7.2.3"
   },
   "description": "",
   "main": "app.js",
