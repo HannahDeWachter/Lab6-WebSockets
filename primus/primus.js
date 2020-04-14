@@ -1,6 +1,10 @@
-exports.go = function (server) {
-    const Primus = require('primus');
-    var primus = new Primus(server, {});
+const Primus = require('primus');
 
-    // your primus logic can go here
+let go = (server) => {
+    var primus = new Primus(server, {});
+    primus.on('connection', (spark) => {
+        console.log("Received spark");
+    });
 }
+
+module.exports.go = go;
