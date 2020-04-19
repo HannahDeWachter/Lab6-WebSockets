@@ -3,6 +3,7 @@ html(lang='en')
 head
 meta(charset='UTF-8')
 meta(name='viewport' content='width=device-width, initial-scale=1.0')
+link(rel='stylesheet', href='/stylesheets/style.css')
 title Update number of Corona cases
 body
 div
@@ -13,8 +14,8 @@ div
         option(value='USA') USA
         option(value='China') China
     label(for='number') Number of cases
-    input(type='number' name='number')
-    button Update
+    input.input--text(type='number' name='number')
+    button.btn.btn--primary Update
 
 script(src='http://localhost:3000/primus/primus.js')
 script(src='/javascripts/update.js')
