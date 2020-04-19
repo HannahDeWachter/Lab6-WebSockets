@@ -4,11 +4,16 @@ const coronaSchema = new Schema({
     country: String,
     number: String
 });
+const Corona = mongoose.model('Corona', coronaSchema);
 
 const getAll = (req, res) => {
-    res.json({
-        "status": "success",
-        "message": "GETIING all numbers"
+    Corona.find({}, (err, docs) => {
+        if (!err) {
+            res.json({
+                "status": "succes",
+                "data": docs
+            });
+        }
     });
 }
 
