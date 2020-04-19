@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const statsController = require('../../../controllers/api/v1/corona');
+const coronaController = require('../../../controllers/api/v1/corona');
 
-router.get("/", statsController.getStats);
-router.put("/updatestats", statsController.updateStats);
+router.get("/", coronaController.getAll);
+router.put("/updatestats", coronaController.update);
 
 module.exports = router;
