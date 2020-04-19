@@ -1,7 +1,7 @@
 const Primus = require('primus');
 
 let go = (server) => {
-    var primus = new Primus(server, {});
+    let primus = new Primus(server, {/* options */ });
     primus.on('connection', (spark) => {
         console.log("Received spark");
     });
