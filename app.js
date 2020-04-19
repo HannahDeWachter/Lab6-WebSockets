@@ -9,6 +9,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const coronaRouter = require('./routes/api/v1/corona');
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/websockets', {
+  useNewUrlParser: true
+});
+
 var app = express();
 
 // view engine setup
