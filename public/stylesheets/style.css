@@ -9,12 +9,12 @@ body
   margin: auto;
 }
 
-.input--text::placeholder
+.input::placeholder
 {
   color: #ccc;
 }
 
-.input--text
+.input
 {
   font-size: 1em;
   width: 100%;
