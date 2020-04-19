@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+head
+meta(charset='UTF-8')
+meta(name='viewport' content='width=device-width, initial-scale=1.0')
+title Update number of Corona cases
+body
+div
+    label(for='country') Country
+    select(name='country')
+        option(value='Belgium' selected='selected') Belgium
+        option(value='Spain') Spain
+        option(value='USA') USA
+        option(value='China') China
+    label(for='number') Number of cases
+    input(type='number' name='number')
+    button Update
+
+script(src='http://localhost:3000/primus/primus.js')
+script(src='/javascripts/update.js')
