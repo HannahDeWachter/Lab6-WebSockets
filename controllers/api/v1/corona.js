@@ -25,8 +25,8 @@ const getAll = (req, res) => {
 
 const create = (req, res) => {
     let stat = new Corona();
-    stat.country = "Belgium";
-    stat.number = "178";
+    stat.country = req.body.country;
+    stat.number = req.body.number;
     stat.save((err, doc) => {
         if (err) {
             res.json({
