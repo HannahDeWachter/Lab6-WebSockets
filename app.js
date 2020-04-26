@@ -9,8 +9,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const coronaRouter = require('./routes/api/v1/corona');
 
+const config = require('config');
+
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/websockets', {
+mongoose.connect(process.env.dbconn || config.get('Database.conn'), {
   useNewUrlParser: true
 });
 
