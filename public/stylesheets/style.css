@@ -37,10 +37,16 @@ body
 {
   border-top: 1px solid #ddd;
   color: #F94D35;
-  display: flex;
-  flex-direction: row;
+  display: block;
   align-items: center;
   padding: 0.8em;
+}
+.countries h1{
+  margin-bottom: 0.2em;
+}
+.countries p{
+  color: #000;
+  margin: 0;
 }
 
 .btn
