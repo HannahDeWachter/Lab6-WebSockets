@@ -13,6 +13,16 @@ document.querySelector("#update").addEventListener("click", function () {
     let number = document.querySelector("#number").value;
     let country = document.querySelector("#country").value;
 
-    console.log(number);
-    console.log(country);
+    // console.log(number);
+    // console.log(country);
+
+    fetch('http://localhost:3000/api/v1/corona/updatestats', {
+        method: "put",
+        headers: {
+            'Content-Type': 'application/json'
+        }, body: JSON.stringify({
+            "country": country,
+            "number": number
+        })
+    });
 });
