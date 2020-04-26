@@ -8,3 +8,7 @@ primus = Primus.connect("http://localhost:3000", {
         , retries: 10 // Number: How many times we should try to reconnect.
     }
 });
+
+document.querySelector("#update").addEventListener("click", function () {
+    console.log("click!");
+});
