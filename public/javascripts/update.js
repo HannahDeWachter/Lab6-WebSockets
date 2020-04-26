@@ -1,4 +1,4 @@
-const base_url = "http://localhost:3000";
+const base_url = "https://websockets-hannah.herokuapp.com";
 
 // PRIMUS LIVE
 primus = Primus.connect(base_url, {
@@ -27,7 +27,7 @@ document.querySelector("#update").addEventListener("click", function () {
     }).then(json => {
         document.querySelector("#number").value = "";
         primus.write({
-            "action": "addStats",
+            "action": "addStats"
         });
     });
 });

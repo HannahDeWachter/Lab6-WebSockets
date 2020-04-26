@@ -1,4 +1,4 @@
-const base_url = "http://localhost:3000";
+const base_url = "https://websockets-hannah.herokuapp.com";
 
 // PRIMUS LIVE
 primus = Primus.connect(base_url, {
@@ -18,14 +18,14 @@ primus.on('data', (json) => {
 
 let showNumbers = (json) => {
     json.data.forEach(stat => {
-        let child = document.createElement('div');
+        let div = document.createElement('div');
         let country = document.createElement('h1');
         let number = document.createElement('p');
         country.innerHTML = stat.country;
         number.innerHTML = stat.number;
-        child.append(country);
-        child.append(number);
-        document.querySelector(".countries").append(child);
+        div.append(country);
+        div.append(number);
+        document.querySelector(".countries").append(div);
     });
 }
 
