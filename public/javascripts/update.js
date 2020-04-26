@@ -10,5 +10,7 @@ primus = Primus.connect("http://localhost:3000", {
 });
 
 document.querySelector("#update").addEventListener("click", function () {
-    console.log("click!");
+    let number = document.querySelector("#number").value;
+
+    console.log(number);
 });
