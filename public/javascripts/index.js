@@ -11,11 +11,10 @@ primus = Primus.connect(base_url, {
 
 primus.on('data', (json) => {
     if (json.action === "showStats") {
+        document.querySelector(".countries").innerHTML = "";
         showNumbers(json.data);
     }
 });
-
-let parent = document.querySelector(".countries");
 
 let showNumbers = (json) => {
     json.data.forEach(stat => {
@@ -26,7 +25,7 @@ let showNumbers = (json) => {
         number.innerHTML = stat.number;
         child.append(country);
         child.append(number);
-        parent.append(child);
+        document.querySelector(".countries").append(child);
     });
 }
 
