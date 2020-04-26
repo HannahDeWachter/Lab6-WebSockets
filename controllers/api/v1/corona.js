@@ -1,10 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const coronaSchema = new Schema({
-    country: String,
-    number: String
-});
-const Corona = mongoose.model('Corona', coronaSchema);
+const Corona = require('../../../models/Corona');
 
 const getAll = (req, res) => {
     Corona.find({}, (err, docs) => {
