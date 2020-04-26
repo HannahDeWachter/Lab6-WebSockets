@@ -1,7 +1,7 @@
-const base_url = "";
+const base_url = "http://localhost:3000";
 
 // PRIMUS LIVE
-primus = Primus.connect("http://localhost:3000", {
+primus = Primus.connect(base_url, {
     reconnect: {
         max: Infinity // Number: The max delay before we try to reconnect.
         , min: 500 // Number: The minimum delay before we try reconnect.
@@ -16,7 +16,7 @@ document.querySelector("#update").addEventListener("click", function () {
     // console.log(number);
     // console.log(country);
 
-    fetch('http://localhost:3000/api/v1/corona/updatestats', {
+    fetch(base_url + '/api/v1/corona/updatestats', {
         method: "put",
         headers: {
             'Content-Type': 'application/json'
@@ -24,5 +24,9 @@ document.querySelector("#update").addEventListener("click", function () {
             "country": country,
             "number": number
         })
+    }).then(json => {
+        primus.write({
+            "action": "addStats",
+        });
     });
 });
