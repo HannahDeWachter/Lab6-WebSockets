@@ -25,6 +25,7 @@ document.querySelector("#update").addEventListener("click", function () {
             "number": number
         })
     }).then(json => {
+        document.querySelector("#number").value = "";
         primus.write({
             "action": "addStats",
         });
