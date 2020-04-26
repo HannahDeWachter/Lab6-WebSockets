@@ -38,9 +38,19 @@ const create = (req, res) => {
 }
 
 const update = (req, res) => {
-    res.json({
-        "status": "success",
-        "message": "UPDATING numbers"
+    Corona.findOneAndUpdate({ country: req.body.country }, { number: req.body.number }, (err, doc) => {
+        if (err) {
+            res.json({
+                "status": "error",
+                "message": "Could not update stats from " + req.body.country
+            });
+        }
+        if (!err) {
+            res.json({
+                "status": "succes",
+                "message": doc
+            });
+        }
     });
 }
 
